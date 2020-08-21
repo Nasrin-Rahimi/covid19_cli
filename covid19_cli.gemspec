@@ -1,4 +1,4 @@
-require_relative 'lib/covid19_cli/version'
+require_relative 'lib/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "covid19_cli"
