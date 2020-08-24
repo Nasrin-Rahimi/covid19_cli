@@ -7,7 +7,9 @@
       
       def all_countries
         write_header
-        Covid19::Country.all.each.with_index(1){|c,index| puts "#{index}.  #{c.name} #{c.code} #{c.latest_confirmed} #{c.latest_deaths} #{c.recovered}" }
+        Covid19::Country.all.each.with_index(1){|c,index| 
+        puts "#{index}.  #{c.name} | #{c.latest_confirmed} | #{c.latest_deaths} | #{c.recovered}" 
+        puts "-------------------------------------------------"}
       end
 
       def  all_cases_in_the_world
@@ -22,19 +24,25 @@
       end
 
       def list_most_cases
+        write_header
         countries = Covid19::Country.all.max_by(5){|c| c.latest_confirmed}
         countries.each do |country|
-          puts "#{country.name} - #{country.latest_confirmed}"
+          puts "#{country.name}   |   #{country.latest_confirmed}  |   #{country.latest_deaths}  |   #{country.recovered}"
+          puts "-------------------------------------------------"
         end
       end
 
       def get_country_by_name(name)
         country = Covid19::Country.all.find{|c| c.name.downcase == name} 
-        puts "\nCovid-19 info for #{country.name}"
-        puts "Total Cases: #{country.latest_confirmed}"
-        puts "Total Deaths: #{country.latest_deaths}"
-        puts "New Cases: #{country.today_confirmed}"
-        puts "New Deaths: #{country.today_deaths}"
+        puts "\nCovid-19 info for #{country.name} - updated at #{country.updated_at}"
+        puts "Population: #{country.population}"
+        puts "Total Cases: #{country.latest_confirmed}".blue
+        puts "Total Deaths: #{country.latest_deaths}".red
+        puts "New Cases: #{country.today_confirmed}".blue
+        puts "New Deaths: #{country.today_deaths}".red
+        puts "Recovered: #{country.recovered}".green
+        puts "Death Rate: #{country.death_rate.round(2)}%"
+        puts "Recovery Rate: #{country.recovery_rate.round(2)}%"
       end
       
       def menu
@@ -71,8 +79,8 @@
       end
 
       def write_header
-        puts "  | Counrty  | Counrty Code | Total Cases | Total Deaths | Total Recovered "
-        puts "  ------------------------------------------------------------------------"
+        puts "country |  Total Cases | Total Deaths | Recovered"
+        puts "-------------------------------------------------"
       end
 
 
