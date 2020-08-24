@@ -1,7 +1,3 @@
-require 'open-uri'
-require 'net/http'
-require 'json'
-
 class Covid19::API
 
   URL = "https://corona-api.com/countries"
