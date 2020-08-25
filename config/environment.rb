@@ -1,7 +1,6 @@
-  require "bundler"
-# Require the gems from the Gemfile using bundler
+  # require "bundler"
 
- #require 'bundler/setup'
+ require 'bundler/setup'
 
 module Covid19
     class Error < StandardError; end
