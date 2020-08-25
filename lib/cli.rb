@@ -7,7 +7,9 @@
       
       def all_countries
         write_header
-        Covid19::Country.all.each.with_index(1){|c,index| 
+        sorted_countries = Covid19::Country.all.sort_by{|c| c.latest_confirmed && c.latest_deaths}
+        sorted_countries.each.with_index(1){|c,index| 
+        # Covid19::Country.all.each.with_index(1){|c,index| 
         puts "#{index}.  #{c.name} | #{c.latest_confirmed} | #{c.latest_deaths} | #{c.recovered}" 
         puts "-------------------------------------------------"}
       end
