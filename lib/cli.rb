@@ -15,10 +15,14 @@
       end
 
       def  all_cases_in_the_world
-         confirmed = 0
-         deaths = 0
-         recovered = 0
-        Covid19::Country.all.each { |c| confirmed += c.latest_confirmed && deaths += c.latest_deaths && recovered += c.recovered}
+        confirmed = 0
+        deaths = 0
+        recovered = 0
+        Covid19::Country.all.each do |country|
+          confirmed += country.latest_confirmed
+          deaths += country.latest_deaths
+          recovered += country.recovered
+        end
         puts "\nConfirmed countries in total: #{Covid19::Country.all.count}"
         puts "Confirmed: #{confirmed}".blue
         puts "Recovered: #{recovered}".green
@@ -36,6 +40,14 @@
 
       def get_country_by_name(name)
         country = Covid19::Country.all.find{|c| c.name.downcase == name} 
+        if country == nil
+          puts "The country name is invalid!"
+        else
+          output_country(country) 
+        end
+      end
+
+      def output_country(country)
         puts "\nCovid-19 info for #{country.name} - updated at #{country.updated_at}"
         puts "Population: #{country.population}"
         puts "Total Cases: #{country.latest_confirmed}".blue
