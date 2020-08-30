@@ -1,6 +1,6 @@
 # Covid19Cli
 
-This Ruby Gem provides a CLI to view the Covid-19 information from trusted sources(World Health Organization) via API.
+This Ruby Gem provides a CLI to view the Covid-19 information via API from trusted sources(World Health Organization and Johns Hopkins CSSE).
 
 ## Installation
 
