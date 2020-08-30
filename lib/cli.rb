@@ -7,11 +7,11 @@
       
       def all_countries
         write_header
-        sorted_countries = Covid19::Country.all.sort_by{|c| c.latest_confirmed && c.latest_deaths}
-        sorted_countries.each.with_index(1){|c,index| 
-        # Covid19::Country.all.each.with_index(1){|c,index| 
-        puts "#{index}.  #{c.name} | #{c.latest_confirmed} | #{c.latest_deaths} | #{c.recovered}" 
-        puts "-------------------------------------------------"}
+        # sorted_countries = Covid19::Country.all.sort_by{|c| c.latest_confirmed && c.latest_deaths}
+        # sorted_countries.each.with_index(1){|c,index| 
+        Covid19::Country.all.each.with_index(1){|c,index| 
+        puts "#{index}.  #{c.name} | #{c.population} |  #{c.latest_confirmed} | #{c.latest_deaths} | #{c.recovered}" 
+        puts "------------------------------------------------------"}
       end
 
       def  all_cases_in_the_world
@@ -33,8 +33,8 @@
         write_header
         countries = Covid19::Country.all.max_by(5){|c| c.latest_confirmed}
         countries.each do |country|
-          puts "#{country.name}   |   #{country.latest_confirmed}  |   #{country.latest_deaths}  |   #{country.recovered}"
-          puts "-------------------------------------------------"
+          puts "#{country.name}   | #{country.population} |   #{country.latest_confirmed}  |   #{country.latest_deaths}  |   #{country.recovered}"
+          puts "------------------------------------------------------"
         end
       end
 
@@ -55,8 +55,8 @@
         puts "New Cases: #{country.today_confirmed}".blue
         puts "New Deaths: #{country.today_deaths}".red
         puts "Recovered: #{country.recovered}".green
-        puts "Death Rate: #{country.death_rate.round(2)}%"
-        puts "Recovery Rate: #{country.recovery_rate.round(2)}%"
+        puts "Death Rate: #{country.death_rate.round(2)}%".red
+        puts "Recovery Rate: #{country.recovery_rate.round(2)}%".green
       end
       
       def menu
@@ -64,10 +64,10 @@
         input = nil
         
         while input != "exit" do
-            puts "\nTo list all of countries, enter 'countries'."
-            puts "To list first 5 countries with the most Covid-19 cases, enter 'most'."
-            puts "To see all cases in the whole world, enter 'all'."
-            puts "To see a country covid-19 information, enter 1."
+            puts "\nTo see Covid-19 info about all countries, enter 'countries'."
+            puts "To see first 5 countries with the most Covid-19 cases, enter 'most'."
+            puts "To see all Covid-19 cases in the whole world, enter 'all'."
+            puts "To see a country Covid-19 information, enter 1."
             puts "To quit, type 'exit'."
             puts "\nWhat would you like to do?"
             input = gets.strip.downcase
@@ -93,8 +93,8 @@
       end
 
       def write_header
-        puts "country |  Total Cases | Total Deaths | Recovered"
-        puts "-------------------------------------------------"
+        puts "Country | Population |  Total Cases | Total Deaths | Recovered"
+        puts "--------------------------------------------------------------"
       end
 
 
