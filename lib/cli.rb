@@ -2,7 +2,6 @@
 
     def call
         menu
-        goodbye
       end
       
       def all_countries
@@ -39,7 +38,7 @@
       end
 
       def get_country_by_name(name)
-        country = Covid19::Country.all.find{|c| c.name.downcase == name} 
+        country = Covid19::Country.find_by_name(name)
         if country == nil
           puts "The country name is invalid!"
         else
@@ -82,6 +81,8 @@
               puts "Please enter country name"  
               input = gets.strip.downcase
               get_country_by_name(input)
+            when "exit"
+              goodbye
             else 
               puts "Not sure what you want, type list or exit"
              end
