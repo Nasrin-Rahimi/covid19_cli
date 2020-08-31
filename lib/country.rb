@@ -34,14 +34,11 @@ class Covid19::Country
     
 
     def self.all
-        get_countries if @@all == []
         @@all
     end
 
     def self.find_by_name(name)
-        all
         @@all.detect{|c| c.name.downcase == name}
-
     end
 
     # def initialize(attrs)
