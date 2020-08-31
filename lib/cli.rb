@@ -1,8 +1,9 @@
  class Covid19::CLI
 
     def call
-        menu
-      end
+      Covid19::API.get_countries
+      menu
+    end
       
       def all_countries
         write_header
