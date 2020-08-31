@@ -36,10 +36,12 @@
       end
     end
 
-    def get_country_by_name(name)
-      country = Covid19::Country.find_by_name(name)
+    def get_country_by_name
+      input = gets.strip.downcase
+      country = Covid19::Country.find_by_name(input)
       if country == nil
-         puts "The country name is invalid!"
+         puts "The country name is invalid! Please enter a country name again."
+        get_country_by_name
       else
         output_country(country) 
       end
@@ -78,12 +80,11 @@
         list_most_cases
       when "1"
         puts "Please enter country name"  
-        input = gets.strip.downcase
-        get_country_by_name(input)
+        get_country_by_name
       when "exit"
          goodbye
       else 
-         puts "Not sure what you want, type list or exit"
+         puts "Not sure what you want!"
       end
     end
   end
