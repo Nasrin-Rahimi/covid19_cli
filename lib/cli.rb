@@ -54,9 +54,9 @@
       puts "Total Deaths: #{country.latest_deaths}".red
       puts "New Cases: #{country.today_confirmed}".blue
       puts "New Deaths: #{country.today_deaths}".red
-      puts "Recovered: #{country.recovered}".green
-      puts "Death Rate: #{country.death_rate.round(2)}%".red
-      puts "Recovery Rate: #{country.recovery_rate.round(2)}%".green
+      puts "Recovered: #{country.recovered}".green if country.recovered != nil
+      puts "Death Rate: #{country.death_rate.round(2)}%".red if country.death_rate != nil
+      puts "Recovery Rate: #{country.recovery_rate.round(2)}%".green if country.recovery_rate != nil
     end
       
   def menu
