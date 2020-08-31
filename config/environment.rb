@@ -1,6 +1,5 @@
-  # require "bundler"
 
- require 'bundler/setup'
+require 'bundler/setup'
 
 module Covid19
     class Error < StandardError; end

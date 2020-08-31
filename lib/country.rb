@@ -35,6 +35,10 @@ class Covid19::Country
         @@all.detect{|c| c.name.downcase == name}
     end
 
+    def save 
+        @@all << self
+    end
+
     # def initialize(attrs)
     #     attrs_from_hash(attrs)
     #     save
@@ -46,9 +50,5 @@ class Covid19::Country
     #         send("#{k}=", v)
     #     end
     #   end
-
-    def save 
-        @@all << self
-    end
 
 end
