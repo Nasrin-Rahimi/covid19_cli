@@ -40,7 +40,7 @@ class Covid19::Country
 
     def self.find_by_name(name)
         all
-        @@all.detect{|c| c.name == name.downcase}
+        @@all.detect{|c| c.name.downcase == name}
 
     end
 
