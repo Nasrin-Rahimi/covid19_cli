@@ -27,12 +27,6 @@ class Covid19::Country
         end 
     end
 
-    def self.get_countries
-        Covid19::API.get_countries
-        all
-    end
-    
-
     def self.all
         @@all
     end
