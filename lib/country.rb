@@ -1,6 +1,6 @@
 class Covid19::Country
 
-    attr_accessor :name, :population, :updated_at, :today_deaths, :today_confirmed, :latest_deaths, :latest_confirmed, :recovered, :death_rate, :recovery_rate, :recovered_vs_death_ratio, :cases_per_million_population 
+    attr_reader :name, :population, :updated_at, :today_deaths, :today_confirmed, :latest_deaths, :latest_confirmed, :recovered, :death_rate, :recovery_rate, :recovered_vs_death_ratio, :cases_per_million_population 
 
     @@all = []
 
@@ -20,6 +20,7 @@ class Covid19::Country
         save
 
     end
+
 
     def self.new_from_collection(countries)
         countries.each do |data|
