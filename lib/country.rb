@@ -40,16 +40,4 @@ class Covid19::Country
         @@all << self
     end
 
-    # def initialize(attrs)
-    #     attrs_from_hash(attrs)
-    #     save
-    #   end
-    
-   
-    # def attrs_from_hash(attrs)
-    #     attrs.each do |k, v|
-    #         send("#{k}=", v)
-    #     end
-    #   end
-
 end
