@@ -3,8 +3,7 @@ class Covid19::API
   URL = "https://corona-api.com/countries"
   
   def self.get_request
-    uri = URI.parse(URL)
-    response = Net::HTTP.get_response(uri)
+    response = Net::HTTP.get_response(URI.parse(URL))
     response.body
   end
   
