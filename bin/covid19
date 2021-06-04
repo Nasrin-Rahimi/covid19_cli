@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require_relative "../config/environment.rb"
 
 Covid19::CLI.new.call
