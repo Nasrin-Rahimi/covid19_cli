@@ -3,7 +3,6 @@ require 'bundler/setup'
 
 module Covid19
     class Error < StandardError; end
-    # Your code goes here...
   end
 
 require 'open-uri'
