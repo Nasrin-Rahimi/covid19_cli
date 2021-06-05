@@ -9,7 +9,8 @@
       write_header
       Covid19::Country.all.each.with_index(1){|c,index| 
       puts "#{index}.  #{c.name} | #{c.population} |  #{c.latest_confirmed} | #{c.latest_deaths} | #{c.recovered}" 
-      puts "------------------------------------------------------"}
+      write_line
+    }
     end
 
     def  all_cases_in_the_world
@@ -32,7 +33,7 @@
       countries = Covid19::Country.all.max_by(5){|c| c.latest_confirmed}
       countries.each do |country|
         puts "#{country.name}   | #{country.population} |   #{country.latest_confirmed}  |   #{country.latest_deaths}  |   #{country.recovered}"
-        puts "------------------------------------------------------"
+        write_line
       end
     end
 
@@ -95,6 +96,10 @@
 
   def write_header
     puts "Country | Population |  Total Cases | Total Deaths | Recovered"
+    write_line
+  end
+
+  def write_line
     puts "--------------------------------------------------------------"
   end
 
