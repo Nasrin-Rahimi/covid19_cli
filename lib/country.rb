@@ -21,7 +21,6 @@ class Covid19::Country
 
     end
 
-
     def self.new_from_collection(countries)
         countries.each do |data|
             new(data)
