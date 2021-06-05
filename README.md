@@ -1,6 +1,6 @@
 # Covid19Cli
 
-This Ruby Gem provides a CLI to view the Covid-19 information via API from trusted sources(World Health Organization and Johns Hopkins CSSE).
+This Command Line Interface(CLI) project, provides the Covid-19 information via API from trusted sources(World Health Organization and Johns Hopkins CSSE). User can see Covid-19 info for all countries or just first 5 countries with the most cases in the world. User Also can enter a country name and see info about that country.
 
 ## Installation
 
@@ -8,9 +8,13 @@ $ gem install covid19_cli
 
 ## Usage
 
-Type the below and follow the on screen prompts.
+Type the below command in terminal and follow the on screen prompts.
 
 $ ./bin/covid19
+
+## Demo
+
+https://drive.google.com/file/d/1mTq1_5_960Sonbin3OBNxkaoLDCOwP31/view?usp=sharing
 
 ## Development
 
