@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Nasrin-Rahimi"]
   spec.email         = ["77.nasrin@gmail.com"]
 
-  spec.summary       = %q{HELLO}
-  spec.description   = %q{HELLO}
+  spec.summary       = "Covid_19"
+  spec.description   = "Covid_19 Information Gem"
   spec.homepage      = "https://github.com/Nasrin-Rahimi/covid19_cli"
   spec.license       = "MIT"
   
