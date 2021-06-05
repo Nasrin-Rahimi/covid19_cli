@@ -6,6 +6,10 @@ This Command Line Interface(CLI) project, provides the Covid-19 information via 
 
 $ gem install covid19_cli
 
+## Language
+
+Ruby
+
 ## Usage
 
 Type the below command in terminal and follow the on screen prompts.
